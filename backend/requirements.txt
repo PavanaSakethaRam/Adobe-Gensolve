@@ -7,3 +7,4 @@ scikit-learn
 shapely
 scipy
 svgpathtools
+gunicorn
