@@ -1,0 +1,87 @@
+$red: #ca3737;
+$blue: #4cd4ee;
+$bgColor: #111;
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $bgColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(
+    150deg,
+    transparent,
+    rgb(2, 6, 23),
+    rgb(6, 182, 212)
+  );
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite, moveColors 4s ease infinite;
+  z-index: 50;
+}
+
+.point {
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 50%;
+  margin: 0 0.35em 0.6em;
+  display: inline-block;
+}
+
+@for $i from 1 through 25 {
+  .point:nth-child(#{$i}) {
+    animation: color #{($i * 100) + 1000}ms infinite ease-in-out;
+  }
+
+  .row:nth-child(#{$i}) {
+    animation: opacity #{($i * 100) + 1000}ms infinite ease-in-out;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 80% 50%;
+  }
+}
+
+@keyframes opacity {
+  from,
+  to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes color {
+  from,
+  to {
+    background: $red;
+    filter: blur(1px);
+  }
+  50% {
+    background: $blue;
+    filter: blur(2px);
+  }
+}
