@@ -1,0 +1,9 @@
+numpy
+flask
+flask-cors
+opencv-python
+matplotlib
+scikit-learn
+shapely
+scipy
+svgpathtools

@@ -20,7 +20,8 @@
     "react-dropzone": "^14.2.3",
     "sass": "^1.77.8",
     "tailwind-merge": "^2.4.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "website": "file:"
   },
   "devDependencies": {
     "@types/node": "^20",
